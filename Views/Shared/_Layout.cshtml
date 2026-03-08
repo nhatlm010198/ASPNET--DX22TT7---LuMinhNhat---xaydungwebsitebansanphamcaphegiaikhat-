@@ -1,1 +1,10 @@
-
+@if (Session["User"] != null)
+{
+    <span>Xin chào, @(((CoffeeShopWebsite.Models.User)Session["User"]).FullName)!</span>
+    <a href="@Url.Action("Logout", "Account")">Đăng xuất</a>
+}
+else
+{
+    <a href="@Url.Action("Login", "Account")">Đăng nhập</a> |
+    <a href="@Url.Action("Register", "Account")">Đăng ký</a>
+}

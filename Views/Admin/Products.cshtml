@@ -1,1 +1,25 @@
+@model List<CoffeeShopWebsite.Models.Product>
 
+<h2>Quản lý sản phẩm</h2>
+
+<a href="@Url.Action("CreateProduct")" class="btn btn-success mb-3">Thêm sản phẩm</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Loại</th>
+        <th>Hành động</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.ProductName</td>
+            <td>@p.Price.ToString("N0")</td>
+            <td>@p.Category?.CategoryName</td>
+            <td>
+                <a href="@Url.Action("DeleteProduct", new { id = p.ProductId })" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+    }
+</table>

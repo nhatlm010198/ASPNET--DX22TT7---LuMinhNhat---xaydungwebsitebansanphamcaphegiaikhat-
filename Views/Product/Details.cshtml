@@ -1,1 +1,7 @@
+@model CoffeeShopWebsite.Models.Product
 
+<h2>@Model.ProductName</h2>
+<img src="@Model.ImageUrl" class="img-fluid" />
+<p>@Model.Description</p>
+<p><strong>Giá:</strong> @Model.Price.ToString("N0") VNĐ</p>
+<a href="@Url.Action("AddToCart", "Order", new { id = Model.ProductId })" class="btn btn-success">Thêm vào giỏ</a>

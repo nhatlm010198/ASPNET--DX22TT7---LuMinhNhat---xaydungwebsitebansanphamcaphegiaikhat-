@@ -1,1 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>CoffeeShopWebsite</RootNamespace>
+    <AssemblyName>CoffeeShopWebsite</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Controllers\*.cs" />
+    <Compile Include="Models\*.cs" />
+    <Compile Include="Global.asax.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+  </ItemGroup>
+
+</Project>
